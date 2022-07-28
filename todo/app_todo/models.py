@@ -18,3 +18,6 @@ class List(models.Model):
     date = models.DateTimeField(
         default=datetime.now
     )
+    
+    def __str__(self):
+        return self.name
