@@ -1,0 +1,38 @@
+{% load static %}
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="todo">
+            {% for task in todo %}
+            <div class="card text-center">
+                <div class="card-header">
+                  {{ task.id }}
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{ task.name }}</h5>
+                  <p class="card-text">{{ task.description }}</p>
+                  <a href="#" class="btn btn-primary">Done</a>
+                </div>
+                <div class="card-footer text-muted">
+                  Time left: {{ task.date | timeuntil}}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="addToDo">
+            <h2 style="margin:5px">Django To Do List App</h2>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <input type="text" name="title" id="myInput" placeholder="Title...">
+                <input type="text" name="title" id="myInput" placeholder="Description...">
+                <input type="datetime-local" name="title" id="myInput" placeholder="Date...">
+                <button type="submit" class="addBtn">Add</button>
+            </form>
+        </div>
+    </div>
+</body>

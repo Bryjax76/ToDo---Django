@@ -1,0 +1,47 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body{
+    background-color: rgb(86, 86, 86);
+}
+.container{
+    display: flex;
+    justify-content: center;
+    flex-flow: row;
+}
+.todo{
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+    border: 2px solid black;
+    margin: 3rem;
+    padding: 2rem;
+    width: 40vw;
+}
+.addToDo{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    display: inherit;
+    border: 2px solid red;
+    margin: 3rem;
+    width: 40vw;
+}
+form{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    display: inherit;
+    padding: 1rem;
+    margin: 1rem;
+    border: 2px solid red;
+}
+input{
+    padding: .5em;
+    margin: .5rem;
+}
