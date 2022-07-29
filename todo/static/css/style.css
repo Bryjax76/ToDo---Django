@@ -8,15 +8,14 @@ body{
 }
 .container{
     display: flex;
-    justify-content: center;
     flex-flow: row;
+    justify-content: center;
 }
 .todo{
     display: flex;
     justify-content: center;
     flex-flow: column;
     align-items: center;
-    border: 2px solid black;
     margin: 3rem;
     padding: 2rem;
     width: 40vw;
@@ -27,9 +26,12 @@ body{
     justify-content: center;
     align-items: center;
     display: inherit;
-    border: 2px solid red;
-    margin: 3rem;
-    width: 40vw;
+    width: 30vw;
+    position: fixed;
+    right: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: #007bff 0px 0px 30px 10px;
 }
 form{
     display: flex;
@@ -39,9 +41,12 @@ form{
     display: inherit;
     padding: 1rem;
     margin: 1rem;
-    border: 2px solid red;
 }
 input{
     padding: .5em;
     margin: .5rem;
+}
+.card{
+    margin: 1rem;
+    width: 15vw;
 }

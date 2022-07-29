@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container row">
         <div class="todo">
             {% for task in todo %}
             <div class="card text-center">
@@ -16,16 +16,16 @@
                 <div class="card-body">
                   <h5 class="card-title">{{ task.name }}</h5>
                   <p class="card-text">{{ task.description }}</p>
-                  <a href="#" class="btn btn-primary">Done</a>
+                  <a href="delete/{{task.id}}" class="btn btn-primary">Done</a>
                 </div>
                 <div class="card-footer text-muted">
-                  Time left: {{ task.date | timeuntil}}
+                  Time left: {{ task.date | timeuntil }}
                 </div>
             </div>
             {% endfor %}
         </div>
-        <div class="addToDo">
-            <h2 style="margin:5px">Django To Do List App</h2>
+        <div class="addToDo" id="addToDo">
+            <h2 style="margin:5px; color: white;">Django To Do List App</h2>
             <form action="" method="POST">
                 {% csrf_token %}
                 <input type="text" name="name" id="myInput" placeholder="Title...">
@@ -35,4 +35,14 @@
             </form>
         </div>
     </div>
+<script>
+function myFunction() {
+    var x = document.getElementById("addToDo");
+    if (x.className === "addToDo") {
+        x.className += " responsive";
+    } else {
+        x.className = "addToDo";
+    }
+}
+</script>
 </body>
